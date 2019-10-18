@@ -19,9 +19,6 @@ public class UserPosDAO {
 		connection = SingleConnection.getConnection();
 	}
 
-	// crud
-
-	// insert method
 	public void salvar(UserPosJava userposjava) {
 		String sql = "insert into userposjava ( nome, email) values (?, ?) ";
 		try {
@@ -34,7 +31,7 @@ public class UserPosDAO {
 		} catch (Exception e) {
 
 			try {
-				connection.rollback(); // reverte operação
+				connection.rollback();
 			} catch (Exception e1) {
 				e1.printStackTrace();
 			}
@@ -66,8 +63,7 @@ public class UserPosDAO {
 		}
 
 	}
-
-	// retrive method
+	
 	public List<UserPosJava> listar() throws SQLException {
 		List<UserPosJava> list = new ArrayList<UserPosJava>();
 
